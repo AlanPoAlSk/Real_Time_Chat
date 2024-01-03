@@ -3,6 +3,7 @@ import MainPage from './pages/MainPage';
 import {Route, Routes, Navigate} from 'react-router-dom'
 import Authentication from './components/Authentication';
 import { AuthContext } from './context/AuthContext';
+import { ChatContextProvider } from './context/ChatContext';
 
 // import './App.css'
 
@@ -17,7 +18,7 @@ function App() {
     };
 
   return (
-    <>
+    <ChatContextProvider user= {user}>
         <Routes>
         <Route
           path="/"
@@ -27,7 +28,7 @@ function App() {
             {/* Route for the main page */}
             {/* <Route path="/main" element={<MainPage />} /> */}
         </Routes>
-    </>
+    </ChatContextProvider>
   )
 }
 

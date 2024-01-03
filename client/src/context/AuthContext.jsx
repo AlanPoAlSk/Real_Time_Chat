@@ -1,4 +1,6 @@
 import { createContext, useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 export const AuthContext = createContext()
 
@@ -20,6 +22,8 @@ export const AuthContextProvider = ({ children }) => {
         password: '',
         
     })
+
+    const navigate = useNavigate();
     // console.log('registerInfo', registerInfo);
 
     // console.log('user', user )
@@ -49,7 +53,8 @@ export const AuthContextProvider = ({ children }) => {
 
     const logoutUser = useCallback(() => {
         localStorage.removeItem('user');
-        setUser(null)
+        setUser(null);
+        navigate('/'); // Redirect to the homepage after logout
     }, []);
 
 

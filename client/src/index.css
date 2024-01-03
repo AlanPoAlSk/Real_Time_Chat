@@ -1,4 +1,15 @@
-.regContainer {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+
+/* .regContainer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,11 +94,11 @@ p a:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 300px;
-}
+} */
 
 /* Your CSS file */
 
-.main-page {
+/* .main-page {
   display: flex;
   justify-content: space-around;
   padding: 20px;
@@ -119,8 +130,17 @@ p a:hover {
 .group p {
   margin-top: 5px;
   color: #666;
-}
+} */
 
+
+.userOnline {
+  color: greenyellow
+  
+}
+.userNotOnline {
+  color: red
+
+}
 
 
 
