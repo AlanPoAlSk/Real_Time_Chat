@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
