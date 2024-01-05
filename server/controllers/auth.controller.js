@@ -86,6 +86,8 @@ const authController = {
             // Send token and user ID in response upon successful login
             res.status(200).json({
                 _id: user._id,
+                firstName: user.firstName,
+                lastName: user.lastName,
                 fullName: user.firstName + ' ' + user.lastName,
                 email: user.email,
                 token,

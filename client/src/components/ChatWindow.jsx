@@ -8,22 +8,33 @@ const ChatWindow = () => {
     const { currentChat, messages, isMessagesLoading, messagesError, sendTextMessage } = useContext(ChatContext);
     const { recipientUser } = useFetchRecipientUser(currentChat, user);
     const [textMessage, setTextMessage] = useState('');
-    const scroll = useRef()
+    const scroll = useRef();
+    const [showNoConversation, setShowNoConversation] = useState(!recipientUser);
 
 
-    console.log('text', textMessage)
+    // console.log('text', textMessage)
 
     useEffect(() => {
         scroll.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages])
 
+    const handleClose = () => {
+        setShowNoConversation(true);
+    };
+
+    useEffect(() => {
+        setShowNoConversation(!recipientUser);
+    }, [recipientUser]);
+
     // console.log('currentChat:', currentChat);
     // console.log('user:', user);
     // console.log('recipientUser from ChatWindow:', recipientUser);
-    if (!recipientUser) return (
-        <p style={{ textAlign: 'center', width: '100%' }}>
-            No conversation selected
-        </p>
+    if (showNoConversation || !recipientUser) return (
+        <div className="border border-gray-400 p-4">
+            <p style={{ textAlign: 'center', width: '100%' }}>
+                Select or start a conversation
+            </p>
+        </div>
     )
     if (isMessagesLoading) return (
         <p style={{ textAlign: 'center', width: '100%' }}>
@@ -32,11 +43,11 @@ const ChatWindow = () => {
     )
 
     return <>
-        <div className="flex flex-col h-screen bg-gray-100">
+        <div className="flex flex-col h-screen bg-gray-100 dark:bg-gray-400">
             {/* Header */}
-            <div className="bg-gray-200 py-4 px-6 flex justify-between items-center">
+            <div className="bg-gray-200 py-4 px-6 flex justify-between items-center dark:bg-gray-600">
                 <h1 className="text-xl font-semibold">{recipientUser?.firstName} {recipientUser?.lastName}</h1>
-                <button className="text-white bg-red-500 px-3 py-1 rounded">Close</button>
+                <button onClick={handleClose} className="text-white bg-red-500 px-3 py-1 rounded">Close</button>
             </div>
 
             {/* Chat Messages */}
@@ -75,15 +86,17 @@ const ChatWindow = () => {
                                 {/* <span className="block">{message.text}</span>
                                 <span className="text-xs text-black-500">{formattedTime}</span> */}
                                 <div className="flex items-start gap-2.5">
-                                    <img className="w-8 h-8 rounded-full" src="/docs/images/people/profile-picture-3.jpg" alt="Jese image"/>
-                                        <div className="flex flex-col w-full max-w-[320px] leading-1.5">
-                                            <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                                                <span className="text-sm font-semibold text-gray-900 dark:text-white">{user?.firstName}</span>
-                                                <span className="text-sm font-normal text-gray-500 dark:text-gray-400">{formattedTime}</span>
-                                            </div>
-                                            <p className="text-sm font-normal py-2 text-gray-900 dark:text-white"> {message.text} </p>
-                                            <span className="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+                                    <div className="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                        <svg className="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
+                                    </div>
+                                    <div className="flex flex-col w-full max-w-[320px] leading-1.5">
+                                        <div className="flex items-center space-x-2 rtl:space-x-reverse">
+                                            <span className="text-sm font-semibold text-gray-900 dark:text-white">{user?.firstName}</span>
+                                            <span className="text-sm font-normal text-gray-500 dark:text-gray-600">{formattedTime}</span>
                                         </div>
+                                        <p className="text-sm font-normal py-2 text-gray-900 dark:text-black"> {message.text} </p>
+                                        <span className="text-sm font-normal text-gray-500 dark:text-gray-600">Delivered</span>
+                                    </div>
                                 </div>
                             </div>
                         );
@@ -92,15 +105,15 @@ const ChatWindow = () => {
 
 
             {/* Message Input */}
-            <div className="bg-white p-4 flex items-center">
+            <div className="bg-white p-4 flex dark:bg-black ">
                 <input
                     type="text"
                     placeholder="Type a message..."
                     value={textMessage}
                     onChange={(e) => setTextMessage(e.target.value)}
-                    className="border-2 border-gray-300 rounded-l-full py-2 px-4 flex-1 focus:outline-none"
+                    className="border-2 border-gray-300 rounded-l-full py-2 px-4 flex-1 focus:outline-none dark:bg-gray-600 dark:text-white"
                 />
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-r-full" onClick={() => sendTextMessage(textMessage, user, currentChat._id, setTextMessage)}>Send</button>
+                <button className="bg-blue-500 h-11 text-white px-4 py-2 rounded-r-full" onClick={() => sendTextMessage(textMessage, user, currentChat._id, setTextMessage)}>Send</button>
             </div>
         </div>
     </>;

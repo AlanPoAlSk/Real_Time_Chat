@@ -25,8 +25,6 @@ function App() {
           element={user ? <Navigate to="/auth/user" /> : <Authentication />}
         />
         <Route path="/auth/user" element={<MainPage />} />
-        {/* Route for the main page */}
-        {/* <Route path="/main" element={<MainPage />} /> */}
       </Routes>
     </ChatContextProvider>
   )
