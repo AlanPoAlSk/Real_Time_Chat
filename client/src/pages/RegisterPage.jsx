@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const RegisterComponent = ({ switchPage }) => {
     const navigate = useNavigate();
-    const { registerInfo, updateRegisterInfo } = useContext(AuthContext);
+    const { registerInfo, updateRegisterInfo, loginUser } = useContext(AuthContext);
     // const [formData, setFormData] = useState({
     //     firstName: '',
     //     lastName: '',
@@ -58,6 +58,20 @@ const RegisterComponent = ({ switchPage }) => {
             const response = await axios.post('http://localhost:8000/auth/register', registerInfo);
 
             console.log('Registration successful:', response.data);
+            window.alert("Congratulations and welcome to Chat Chit! You're now registered and ready to use my App!");
+
+            // Store user data in localStorage after successful registration
+            try {
+                localStorage.setItem('user', JSON.stringify(response.data));
+                console.log('user data stored in localStorage:', response.data);
+            } catch (error) {
+                console.error('Error storing user data in localStorage:', error);
+            }
+
+            // Log in the user automatically after registration
+            loginUser(response.data);
+
+            // Redirect to the user's page or any other appropriate action
             navigate('/auth/user');
 
             // Clear the form after successful registration

@@ -78,7 +78,7 @@ const Main = () => {
                         </svg>
                     )}
                 </button>
-                <h1 className="text-xl font-light">It's Time to Chat '<span className="italic">{user?.fullName}'</span></h1>
+                <h1 className="text-xl font-light">Welcome '<span className="italic font-bold">{user?.firstName} {user?.lastName}' </span>, it's time to Chit</h1>
                 <div className="flex items-center">
                     <Notification />
                     <div className="relative inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">

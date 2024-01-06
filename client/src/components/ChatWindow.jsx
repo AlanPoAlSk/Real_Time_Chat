@@ -78,7 +78,7 @@ const ChatWindow = () => {
                                     borderTopRightRadius: message.senderId === user?._id ? '1.5rem' : '1.5rem',
                                     borderBottomLeftRadius: message.senderId === user?._id ? '1.5rem' : '0.5rem',
                                     borderBottomRightRadius: message.senderId === user?._id ? '0.5rem' : '1.5rem',
-                                    textAlign: message.senderId === user?._id ? 'right' : 'left',
+                                    // textAlign: message.senderId === user?._id ? 'left' : 'left',
                                     marginBottom: '10px',
                                 }}
                                 ref={scroll}
@@ -90,12 +90,16 @@ const ChatWindow = () => {
                                         <svg className="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd"></path></svg>
                                     </div>
                                     <div className="flex flex-col w-full max-w-[320px] leading-1.5">
-                                        <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                                            <span className="text-sm font-semibold text-gray-900 dark:text-white">{user?.firstName}</span>
-                                            <span className="text-sm font-normal text-gray-500 dark:text-gray-600">{formattedTime}</span>
+                                        <div className="flex items-center space-x-2 rtl:space-x-reverse justify-between">
+                                            {message.senderId === user?._id
+                                                ?
+                                                <span className="text-md font-semibold text-gray-900 dark:text-black"> {user.firstName} </span>
+                                                :
+                                                <span className="text-md font-semibold text-gray-900 dark:text-black"> {recipientUser.firstName} </span>}
+                                            <span className="text-sm font-normal text-gray-600 dark:text-gray-700">{formattedTime}</span>
                                         </div>
-                                        <p className="text-sm font-normal py-2 text-gray-900 dark:text-black"> {message.text} </p>
-                                        <span className="text-sm font-normal text-gray-500 dark:text-gray-600">Delivered</span>
+                                        <p className="text-md font-normal py-2 text-gray-900 dark:text-black"> {message.text} </p>
+                                        {/* <span className="text-sm font-normal text-gray-500 dark:text-gray-600">message read icon</span> */}
                                     </div>
                                 </div>
                             </div>
