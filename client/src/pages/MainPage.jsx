@@ -119,7 +119,7 @@ const Main = () => {
             {/* Potential Chats Window */}
             {showPotentialChats && (
                 <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
-                    <div className="bg-white p-4 rounded shadow-lg">
+                    <div className="bg-white p-4 rounded shadow-lg dark:bg-gray-400">
                         <PotentialChatsUser />
                         <button onClick={() => setShowPotentialChats(false)} className="mt-4 bg-red-500 text-white px-4 py-2 rounded">
                             Close

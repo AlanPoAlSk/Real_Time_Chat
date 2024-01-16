@@ -12,11 +12,11 @@ const PotentialChatsUser = () => {
     const sortedPotentialChats = userPotentialChats.slice().sort((a, b) => a.email.localeCompare(b.email));
 
     return (
-        <>
+        
             <div className="flex flex-col gap-4">
                 {userPotentialChats && sortedPotentialChats.map((userdb, index) => (
                     <div
-                        className="flex items-center justify-between px-4 py-2 rounded-lg border dark:border-gray-700 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800"
+                        className="flex items-center justify-between px-4 py-2 rounded-lg border dark:border-gray-700 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 dark:bg-gray-700"
                         key={index}
                         onClick={() => createChat(user._id, userdb._id)}
                     >
@@ -27,7 +27,7 @@ const PotentialChatsUser = () => {
                     </div>
                 ))}
             </div>
-        </>
+        
     );
 };
 

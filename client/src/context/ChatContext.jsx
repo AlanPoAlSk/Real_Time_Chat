@@ -20,7 +20,7 @@ export const ChatContextProvider = ({ children, user }) => {
     const [notifications, setNotifications] = useState([]);
     const [allUsers, setAllUsers] = useState([]);
 
-    console.log('notifications', notifications);
+    // console.log('notifications', notifications);
     // console.log('onlineUsers', onlineUsers);
 
     // console.log('messages', messages)
@@ -152,6 +152,9 @@ export const ChatContextProvider = ({ children, user }) => {
         const getMessages = async () => {
             // if (!user || !user._id) {
             //     return; // Exit early if user or user._id is null
+            // }
+            // if (!currentChat || !currentChat._id) {
+            //     return;
             // }
 
             setIsMessagesLoading(true);
