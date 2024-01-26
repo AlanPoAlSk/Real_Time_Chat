@@ -153,9 +153,9 @@ export const ChatContextProvider = ({ children, user }) => {
             // if (!user || !user._id) {
             //     return; // Exit early if user or user._id is null
             // }
-            // if (!currentChat || !currentChat._id) {
-            //     return;
-            // }
+            if (!currentChat || !currentChat._id) {
+                return;
+            }
 
             setIsMessagesLoading(true);
             setMessagesError(null);
