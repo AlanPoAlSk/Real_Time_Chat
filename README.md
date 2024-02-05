@@ -36,33 +36,44 @@ Please follow these steps:
 git clone https://github.com/AlanPoAlSk/Real_Time_Chat.git
 
 2.
-# Navigate to the project directory and install the dependencies
+# Navigate to the project directory
 cd Real_Time_Chat
+
+# Install the dependencies
 npm install
 
 3.
-# Navigate to the server folder and setup the backend
+# Navigate to the server folder
 cd server
+
+# Install the dependencies
 npm install
 
 4.
-# Navigate to the client folder and run the client-side applicatiopn
+# Navigate to the client folder 
 cd client
+
+# Run the client-side application
 npm run dev
 
-
 5.
-# Navigate to the server folder and run the server-side apoplication
+# Navigate to the server folder 
 cd server
+
+# Run the server-side application
 nodemon server.js
 
-5.
-# Navigate to the socket folder and run the socket-side application
+6.
+# Navigate to the socket folder
 cd socket
+
+# Run the socket-side application
 node index.js
 
-Contribution
+____________________________________________
+
+
 Every help or feedback are welcome
 
-Contact
-Have questions, suggestions, or just want to chat about Chat Chit? Find me on Linkedin [www.linkedin.com/in/alan-skrzecz].
+
+If you have questions, suggestions, or just want to chat about Chat Chit,let me know or find me on Linkedin [www.linkedin.com/in/alan-skrzecz].
