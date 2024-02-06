@@ -1,16 +1,15 @@
-Chat Chit
-Description:
+
 Welcome to Chat Chit, a real-time chat application built with the MERN (MongoDB, Express.js, React.js, Node.js) stack. Dive into seamless communication with instant messaging and real-time updates, all packaged in a user-friendly interface.
 
 Why Chat Chit?
 I was always fascinating about the real time communication. I finally had the opportunity to discover and apply what I had learned so far. Here's the result! A proper Real time chat app that could bring people closer, making instantaneous connections in a digital world.
 
-Key Features
-Real-time Communication: Experience the thrill of instant messaging with real-time updates powered by Socket.io.
-User Authentication: You can create a personalized account, log in securely, and dive into the world of real-time chat.
-Seamless User Experience: This app was built as a single-page application using React.js to ensure a smooth and uninterrupted chat experience.
+# Key Features
+- Real-time Communication: Experience the thrill of instant messaging with real-time updates powered by Socket.io.
+- User Authentication: You can create a personalized account, log in securely, and dive into the world of real-time chat.
+- User Experience: This app was built as a single-page application using React.js to ensure a smooth and uninterrupted chat experience.
 
-Technologies Used
+# Technologies Used :
 # Frontend:
 - React.js: sed to create a dynamic and responsive user interface.
 # Backend : 
@@ -29,11 +28,11 @@ To run this project, you'll need three terminal windows:
 - 1 for the server-side,
 - and 1 for the socket.
 
-Please follow these steps:
+# Please follow these steps:
 
 # 1.
 # Clone the repository
-git clone https://github.com/AlanPoAlSk/Real_Time_Chat.git
+- git clone https://github.com/AlanPoAlSk/Real_Time_Chat.git
 
 # 2.
 # Navigate to the project directory
