@@ -11,14 +11,14 @@ I was always fascinating about the real time communication. I finally had the op
 
 # Technologies Used :
 ## Frontend:
-- React.js: sed to create a dynamic and responsive user interface.
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB): used to create a dynamic and responsive user interface.
 ## Backend : 
-- Node.js: used to power the server-side of the application.  
-- Express.js: used to handle server-side logic and API requests.
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white): used to power the server-side of the application.  
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB): used to handle server-side logic and API requests.
 ## Database:
-- MongoDB: used to store user data and chat history securely.
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white): used to store user data and chat history securely.
 ## Real-time communication:
-- Socket.io: used to master the art of real-time communication.
+![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101): used to master the art of real-time communication.
 
 ## Screenshots
 
